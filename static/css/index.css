@@ -1,0 +1,125 @@
+* {
+    Margin: 0;
+    Padding: 0
+}
+
+#chartdiv {
+    width: 100%;
+    height: 100vh;
+    margin-left: -45%;
+    position: absolute;
+}
+
+#info-block {
+    border-left: 2px solid #9e978b;
+    position: fixed;
+    width: 45%;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    background-color: rgb(218, 218, 218);
+    padding-top: 8vh;
+    padding-left: 2vh;
+}
+
+.title1 {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.input1 {
+    margin-bottom: 1vh;
+    width: calc(100% - 2vh);
+    padding: 1vh;
+}
+
+.input2 {
+    margin-bottom: 1vh;
+    width: 40%;
+    padding: 1vh;
+}
+
+.button1 {
+    width: 30%;
+    padding: 10px;
+    background-color: #9e978b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #565e64;
+}
+
+.button1-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.button {
+    width: calc(100% - 2vh);
+    padding: 10px;
+    background-color: #9e978b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #565e64;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+#findStations {
+    width: 70%;
+}
+
+#resetStation {
+    width: 27%;
+}
+
+#findStation {
+    width: 70%;
+}
+
+#reset {
+    width: 27%;
+}
+
+#block-list {
+    max-height: 40vh;
+    overflow-y: auto;
+    border: 2px solid #9e978b;
+    padding: 5px;
+}
+
+#block-list div {
+    margin-bottom: 5px;
+}
+
+.link1 {
+    display: block;
+    margin-right: 2vw;
+    margin-left: 0;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+}
+
+.link1:hover {
+    color: orange;
+}
+
+p {
+    text-align: center;
+}

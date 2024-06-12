@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/station.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row text-center">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h2 id="station_name"></h2>
+                    <h4 id="station_region"></h4>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <h5 class="col-6">Широта:</h5>
+                        <h5 class="col-6">Долгота:</h5>
+                    </div>
+                    <div class="row">
+                        <h5 id="station_latitude" class="col-6"></h5>
+                        <h5 id="station_longitude" class="col-6"></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="chartBox">
+                <h2>Альбедо</h2>
+                <div class="diagramBlock" id="albedodiv"></div>
+            </div>
+            <div class="chartBox1">
+                <h2>Месячные суммы солнечной радиации</h2>
+                <div class="diagramBlock" id="monthdiv"></div>
+            </div>
+            <div class="chartBox1">
+                <h2>Среднемесячные суточные суммы солнечной радиации</h2>
+                <div class="diagramBlock" id="daydiv"></div>
+            </div>
+            <div class="chartBox1">
+                <h2>Среднемесячные часовые суммы прямой солнечной радиации</h2>
+                <div class="diagramBlock" id="hoursdirectdiv"></div>
+            </div>
+            <div class="chartBox1">
+                <h2>Среднемесячные часовые суммы диффузной солнечной радиации</h2>
+                <div class="diagramBlock" id="hoursdiffusediv"></div>
+            </div>
+            <div class="chartBox1">
+                <h2>Среднемесячные часовые суммы суммарной солнечной радиации</h2>
+                <div class="diagramBlock" id="hourstotaldiv"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <!-- Ресурсы -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+    <script type="text/javascript" src="{% static 'js/station.js' %}"></script>
+{% endblock %}

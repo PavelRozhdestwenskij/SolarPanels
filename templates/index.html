@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Интерактивная карта
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="chartdiv"></div>
+    <div id="info-block">
+        <div class="title1">Поиск по координате:</div>
+        <input id="latitudeInput" class="input1" placeholder="Широта.." type="number" min="0" max="90" required/>
+        <input required id="longitudeInput" class="input1" placeholder="Долгота.." type="number" min="0" max="180"/>
+        <input required id="distanceInput" class="input1" placeholder="Радиус в км." type="number" min="0" max="2000"/>
+        <button id="findStations" class="button" type="submit">Найти ближайшие станции!</button>
+        <button id="resetStation" class="button" type="reset">Сброс</button>
+        <div style="display: none" class="alert alert-danger mx-3 mt-3" role="alert" id="error-message"></div>
+        <div class="title1">Поиск по наименованию:</div>
+        <div>
+            <input id="searchInput" class="input1" placeholder="Введите наименование..">
+            <button id="findStation" class="button">Найти станцию</button>
+            <button id="reset" class="button">Сброс поиска</button>
+        </div>
+        <div class="title1">Список станций:</div>
+        <div id="block-list">
+            {% if station %}
+                {% for el in station %}
+                    <a class="link1" href="{% url 'api:station_info_get' el.id_station %}">
+                        {{ el.station_name }}, {{ el.region }}
+                    </a>
+                {% endfor %}
+            {% else %}
+                <p>Нет результатов для отображения.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <!-- Ресурсы -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}
